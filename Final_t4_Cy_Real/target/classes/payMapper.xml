@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sj.cy.pay.PayMapper">
+
+
+<select id="checkDotori" parameterType="String" resultType="int">
+	select c_dotori from cy_member where c_id=#{c_id}
+</select>
+
+<update id="updateDotori" parameterType="com.sj.cy.pay.Pay">
+	update cy_member set c_dotori = c_dotori + #{c_dotori} where c_id=#{c_id}
+</update>
+
+<update id="setMusic" parameterType="com.sj.cy.pay.Music">
+	update cy_pageInfo set p_music =#{m_music} where p_id=#{m_user}
+</update>
+
+<update id="setTheme" parameterType="com.sj.cy.pay.Music">
+	update cy_pageInfo set p_theme =#{m_music} where p_id=#{m_user}
+</update>
+
+
+</mapper>
